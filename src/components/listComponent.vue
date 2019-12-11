@@ -20,15 +20,33 @@ export default {
   },
   data:()=>{
       return{
-          items:[]
+          items:[],
+          editIndex: false,
+          msg:""
       }
   },
    methods:{
        submit: function(msg) {
-        this.items.push(msg);
+        if (e.keyCode === 13) {
+                if (this.editIndex ==true) {
+                this.items[index] = this.msg;
+                this.items.splice(this.indexval,1,this.items[index]),
+                //eslint-disable-next-line
+                console.log(this.items);
+               this.msg = "";
+              this.editIndex = false;
+              }
+              else{
+                this.items.push(this.msg);
+                this.msg = "";
+              } 
+            }
     },
-    edit: function() {
-
+   
+     editItem: function(index) {
+     this.editIndex = true;
+     this.indexval =index;
+    this.msg = this.items[index];
     },
    }
 }
