@@ -13,7 +13,6 @@
 
 <script>
 import formComponent from "./formComponent.vue";
-
 export default {
     name: "listComponent",
     components: {
