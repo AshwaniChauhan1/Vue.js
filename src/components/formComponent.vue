@@ -3,7 +3,7 @@
     <h2>Fill Form and Press Enter</h2> 
         <br/>
         <form v-on:submit.prevent>
-            <input v-on:keypress="submit" type="text" placeholder="Enter Something" v-model="msg" />
+          <input v-on:keypress="submit" type="text" placeholder="Enter Something" v-model="text" />
         </form>
 </div>
 </template>
@@ -13,17 +13,45 @@ export default {
   name: "formComponent",
   data: function() {
     return {
-      msg: "",
-      editIndex: false
+      text: ''
     };
+  },
+  watch: {
+  propName: function(newValue) {
+    this.text = newValue;
+    // eslint-disable-next-line
+    console.log(this.text);
+    }
+  },
+  props:{
+     propName: {
+      type: String,
+      require: true
+    },
+    editIndex: {
+      type: Boolean,
+      require: true
+    },
+    indexval:{
+      type: Number,
+      require: true
+    }
   },
   methods: {
     submit: function(e) {
-      if (e.keyCode === 13) {
-          this.$emit("submit-item", this.msg)
-          this.msg = "";
-      }
+       if (e.keyCode === 13) {  
+         if (this.editIndex ==true) {
+              this.$emit("edit-item");
+              }
+              else{
+                  this.$emit("submit_item", this.text);
+              }
+              this.text="";
+        }
+      
     }
   }
-};
+  
+  
+}
 </script>
