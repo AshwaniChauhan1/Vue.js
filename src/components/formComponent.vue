@@ -1,6 +1,7 @@
 <template>
  <div>
-    <h2>Fill Form and Press Enter</h2> 
+    <h2>Fill Form </h2> 
+    <h2>Press Enter to Add Name in List</h2> 
         <br/>
         <form v-on:submit.prevent>
           <input v-on:keypress="submit" type="text" placeholder="Enter Something" v-model="text" />

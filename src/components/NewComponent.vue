@@ -1,24 +1,17 @@
 <template>
 <div>
 <h1 :class="{red:isRed}">Hello {{title}}</h1>
-<p>check it for Red</p>
 <input checked=isRed v-model="isRed" type="checkbox">
 <input type="text" v-model="title">
 <button v-on:click="clear">Clear</button>
 <button v-on:click="caps">Caps</button>
-<hr>
-<h2 v-bind:style="{color:color_value.color}">Change to {{color_value.color}} By DropDownn</h2>
-<select v-model="color_value">
-  <option v-bind:value="{ color: 'red' }">red</option>
-  <option v-bind:value="{ color: 'blue' }">blue</option>
-  <option v-bind:value="{ color: 'green' }">green</option>
-  <option v-bind:value="{ color: 'black' }">black</option>
-</select>
-<p>DropDown created by array</p>
-<select v-model="color_value">
-  <option v-for="(col,index) in colors" v-bind:key="index" v-bind:value="{ color: col }">{{col}}</option>
-</select>
-<hr>
+<br>
+<br>
+<ul style="text-align:left">
+  <li>Checkbox for Red</li>
+  <li>Click Clear button for  clear Heading</li>
+  <li>Click Caps button  for Capital Heading</li>
+</ul>
 </div>
 </template>
 
@@ -29,8 +22,6 @@ export default {
       return{ 
           title:"New Component",
           isRed:false,
-          color_value: {color: "black" },
-          colors:["red","blue","green","black"]
           }
 
     },
