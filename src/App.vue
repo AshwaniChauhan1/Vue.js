@@ -5,11 +5,11 @@
     <NewComponent />
     <SmallForm/>
     <div>
-      <h1>Form By using Component</h1>
+      <h1>Form By using Components</h1>
       <listComponent/>
     </div>
     
-    
+
     
     <div style="background-color:whitesmoke;">
       <h2>Practice</h2>
