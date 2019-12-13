@@ -19,8 +19,6 @@ export default {
   watch: {
   propName: function(newValue) {
     this.text = newValue;
-    // eslint-disable-next-line
-    console.log(this.text);
     }
   },
   props:{
@@ -41,12 +39,11 @@ export default {
     submit: function(e) {
        if (e.keyCode === 13) {  
          if (this.editIndex ==true) {
-              this.$emit("edit-item");
-              }
-              else{
-                  this.$emit("submit_item", this.text);
-              }
-              this.text="";
+            this.$emit("edit-item", this.text);
+          } else{
+            this.$emit("submit_item", this.text);
+          }
+          this.text="";
         }
       
     }

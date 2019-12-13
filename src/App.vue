@@ -21,9 +21,10 @@
               v-on:enlarge-txt="postFontSize += 0.1">
               <!-- v-bind:title="post.title" -->
       </blogPost>  
+      <child-component :message="message" @update="updateMessage"></child-component>
     </div>
 
-    <child-component :message="message" @update="updateMessage"></child-component>
+    
     
   </div>
 </template>

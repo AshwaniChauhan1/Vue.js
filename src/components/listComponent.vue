@@ -22,28 +22,26 @@ export default {
       return{
           items:[],
           editIndex: false,
-          name:""
+          name:"",
+          indexval: null
       }
   },
    methods:{
-       submit(value) {
-           this.items.push(value);
+       submit(text) {
+            this.items.push(text);
 
        },
        editItem(index) {
             this.editIndex = true;
-             this.indexval =index;
-            this.name=this.items[index];
-            this.items.splice(this.indexval,1,this.items[index])
-            },
+            this.indexval =index;
+            this.name=this.items[this.indexval];
+        },
 
-        edit: function(index) {
-             this.items[index] = this.name;
-                this.items.splice(this.indexval,1,this.items[index]),
-                //eslint-disable-next-line
-                console.log(this.items);
-              this.editIndex = false;
-            
+        edit: function(text) {
+            this.items[this.indexval] = text;
+            this.items.splice(this.indexval,1,this.items[this.indexval]),
+            this.editIndex = false;
+            this.indexval = null
             }
    }
 }
