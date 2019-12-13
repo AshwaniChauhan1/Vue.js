@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color:whitesmoke;">
+    <div>
         <h3>Addition Function</h3>
         <button v-on:click="a++">AddToA</button>
         <button v-on:click='b++'>AddToB</button>

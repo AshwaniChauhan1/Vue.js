@@ -1,7 +1,7 @@
 <template>
     <div >
         <h3>Here Is Counter</h3>
-		<button @click="counter++">Clicked {{ counter }}</button>
+		<button @click="counter++">Clicked {{ counter }} times</button>
         <hr>
 	</div>
 </template>
