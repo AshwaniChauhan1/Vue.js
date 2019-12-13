@@ -7,7 +7,6 @@
         <h2 @click="changes2">Assignment 2</h2>
         <h2 @click="changes3">Assignment 3</h2>
         <h2 @click="changes4">Assignment 4</h2>
-      
       </div>
       <div style="width:70%;">
         <div v-if="!show1 && !show2 && !show3">
